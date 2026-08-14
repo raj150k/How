@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fariya, Will You Be Mine?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Poppins,sans-serif;
+      background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+      color:#fff;
+      overflow-x:hidden;
+    }
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:24px;
+    }
+    .card{
+      max-width:760px;
+      background:rgba(255,255,255,.12);
+      backdrop-filter:blur(12px);
+      border-radius:28px;
+      padding:32px;
+      box-shadow:0 12px 40px rgba(0,0,0,.18);
+    }
+    h1{
+      font-family:"Dancing Script",cursive;
+      font-size:64px;
+      margin-bottom:8px;
+    }
+    .subtitle{font-size:18px;opacity:.95}
+    .photo{
+      width:260px;
+      border-radius:22px;
+      margin:26px auto;
+      display:block;
+      border:6px solid rgba(255,255,255,.9);
+      box-shadow:0 12px 30px rgba(0,0,0,.25);
+    }
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:14px 28px;
+      border-radius:999px;
+      background:#fff;
+      color:#ff4d79;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .section{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+    h2{
+      font-family:"Dancing Script",cursive;
+      font-size:48px;
+      margin-bottom:16px;
+      text-align:center;
+    }
+    p{
+      line-height:1.9;
+      font-size:17px;
+      text-align:center;
+    }
+    .proposal{
+      background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    }
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      margin-top:24px;
+      flex-wrap:wrap;
+    }
+    button{
+      border:none;
+      padding:14px 28px;
+      border-radius:999px;
+      font-size:16px;
+      cursor:pointer;
+    }
+    .yes{
+      background:#fff;
+      color:#ff4d79;
+      font-weight:700;
+    }
+    .no{
+      background:rgba(255,255,255,.22);
+      color:#fff;
+    }
+    #message{
+      margin-top:24px;
+      text-align:center;
+      font-size:22px;
+      font-weight:700;
+    }
+    footer{
+      text-align:center;
+      padding:22px;
+      background:rgba(0,0,0,.18);
+    }
+    .hearts{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      overflow:hidden;
+    }
+    .heart{
+      position:absolute;
+      animation:float linear infinite;
+      opacity:.85;
+    }
+    @keyframes float{
+      from{transform:translateY(100vh) scale(.7);opacity:0}
+      to{transform:translateY(-10vh) scale(1.2);opacity:1}
+    }
+  </style>
+</head>
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<section class="hero">
+  <div class="card">
+    <h1>Fariya</h1>
+    <div class="subtitle">There is something my heart has wanted to tell you for a long time…</div>
+
+    <!-- তোমাদের ছবি -->
+    <img src="1000180437.jpg" alt="Us" class="photo">
+
+    <a href="#story" class="btn">Open My Heart</a>
+  </div>
+</section>
+
+<section id="story" class="section">
+  <div class="card">
+    <h2>My Story</h2>
+    <p>
+      Fariya, sometimes a person enters your life quietly,
+      but slowly becomes the most beautiful part of your world.
+      For me, that person is you.
+    </p>
+    <p style="margin-top:16px">
+      I don’t know what the future holds,
+      but I know that my happiest thoughts always begin with you.
+    </p>
+  </div>
+</section>
+
+<section class="section proposal">
+  <div class="card">
+    <h2>Fariya, Will You Be My Girlfriend?</h2>
+    <p>
+      You make ordinary days feel special,
+      and my heart feels at peace when I think of you.
+    </p>
+
+    <div class="buttons">
+      <button class="yes" onclick="acceptLove()">Yes ❤️</button>
+      <button class="no" id="noBtn">No</button>
+    </div>
+
+    <div id="message"></div>
+  </div>
+</section>
+
+<footer>
+  Made with love for Fariya ❤️
+</footer>
+
+<script>
+  const hearts = document.getElementById("hearts");
+  for(let i=0;i<35;i++){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.textContent="❤";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(14+Math.random()*22)+"px";
+    h.style.animationDuration=(6+Math.random()*6)+"s";
+    h.style.animationDelay=Math.random()*4+"s";
+    hearts.appendChild(h);
+  }
+
+  function acceptLove(){
+    document.getElementById("message").innerHTML =
+      "❤️ You just made me the happiest person in the world, Fariya ❤️";
+  }
+
+  const noBtn=document.getElementById("noBtn");
+  noBtn.addEventListener("mouseover",()=>{
+    noBtn.style.position="fixed";
+    noBtn.style.left=Math.random()*(window.innerWidth-120)+"px";
+    noBtn.style.top=Math.random()*(window.innerHeight-60)+"px";
+  });
+</script>
+
+</body>
+</html>
